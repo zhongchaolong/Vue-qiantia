@@ -22,23 +22,50 @@ Vue.use(Router)
 let router = new Router({
   routes: [
     // 首页就是商品列表页
-    { name: 'index', path: '/', component: Store, children: 
-      [
+    {
+      name: 'index',
+      path: '/',
+      component: Store,
+      children: [
         // 商品
-        { name: 'goodsList', path: 'goods/list', component: GoodsList },
-        { name: 'goodsDetail', path: 'goods/detail/:id', component: GoodsDetail },
+        {
+          name: 'goodsList',
+          path: 'goods/list',
+          component: GoodsList
+        },
+        {
+          name: 'goodsDetail',
+          path: 'goods/detail/:id',
+          component: GoodsDetail
+        },
 
         // 购物车
-        { name: 'shopcart', path: 'shopcart', component: Shopcart },
+        {
+          name: 'shopcart',
+          path: 'shopcart',
+          component: Shopcart
+        },
 
         // 订单
-        { name: 'orderCommit', path: 'order/commit', component: OrderCommit },
-        { name: 'orderPay', path: 'order/pay', component: OrderPay },
+        {
+          name: 'orderCommit',
+          path: 'order/commit',
+          component: OrderCommit
+        },
+        {
+          name: 'orderPay',
+          path: 'order/pay',
+          component: OrderPay
+        },
       ]
     },
 
     // 登陆
-    { name: 'login', path: '/login', component: Login },
+    {
+      name: 'login',
+      path: '/login',
+      component: Login
+    },
   ]
 });
 router.beforeEach(beforeEach)
